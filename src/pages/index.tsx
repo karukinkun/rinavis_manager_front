@@ -1,22 +1,42 @@
-import { Typography, Container, TextField, Grid, Box, Button } from '@mui/material';
-import { useRouter } from 'next/router';
-import { FC, useState, useEffect } from 'react';
+import {
+  Typography,
+  Container,
+  TextField,
+  Grid,
+  Box,
+  Button,
+} from "@mui/material";
+import { useRouter } from "next/router";
+import { FC, useState, useEffect } from "react";
 
 const Login: FC = () => {
   const router = useRouter();
 
   return (
     <Container component="main" maxWidth="xs">
-      <form onSubmit={()=>{
-      void router.push('/main')
-      }} noValidate>
-        <Grid container rowSpacing={1} flexDirection="column" justifyContent="center" style={{ height: '100vh' }}>
+      <form
+        onSubmit={() => {
+          void router.push("/main");
+        }}
+        noValidate
+      >
+        <Grid
+          container
+          rowSpacing={1}
+          flexDirection="column"
+          justifyContent="center"
+          style={{ height: "100vh" }}
+        >
           <Typography component="h1">
-            <img src="/images/logo.png" alt="リナビスマネージャー" width="100%" />
+            <img
+              src="/images/logo.png"
+              alt="リナビスマネージャー"
+              width="100%"
+            />
           </Typography>
           <Box mt={1} mb={3}>
             <Typography component="h2" variant="h4" align="center">
-            宅配クリーニング管理システム
+              宅配クリーニング管理システム
             </Typography>
           </Box>
           <Grid item>
@@ -27,7 +47,7 @@ const Login: FC = () => {
               size="small"
               fullWidth
               autoComplete="off"
-      variant="outlined"
+              variant="outlined"
             />
           </Grid>
           <Grid item>
@@ -38,7 +58,7 @@ const Login: FC = () => {
               size="small"
               fullWidth
               autoComplete="off"
-      variant="outlined"
+              variant="outlined"
             />
           </Grid>
           <Box mt={1}>
