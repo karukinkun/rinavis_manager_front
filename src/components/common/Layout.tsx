@@ -1,8 +1,9 @@
-import Box from '@mui/material/Box';
-import { ReactNode, FC } from 'react';
+import Box from "@mui/material/Box";
+import { ReactNode, FC } from "react";
 
-import Header from './Header';
-import SideMenu from './SideMenu';
+import Header from "./Header";
+import SideMenu from "./SideMenu";
+import { theme } from "./Theme";
 
 type LayoutProps = {
   children?: ReactNode;
@@ -11,7 +12,7 @@ type LayoutProps = {
 
 const Layout: FC<LayoutProps> = ({ children, title }) => (
   <>
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: "flex" }}>
       <Header title={title} />
       <SideMenu />
       <Box
@@ -19,11 +20,9 @@ const Layout: FC<LayoutProps> = ({ children, title }) => (
         pt="90px"
         pb="20px"
         width="100%"
+        bgcolor={theme.palette.grey[300]}
         sx={{
-          backgroundColor: (theme) => theme.palette.grey[200],
-          flexGrow: 1,
-          height: '100vh',
-          overflow: 'auto',
+          height: "100vh",
         }}
       >
         <Box px="24px">{children}</Box>

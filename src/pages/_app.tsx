@@ -1,11 +1,12 @@
-import { CssBaseline, ThemeProvider } from '@mui/material';
-import type { AppProps } from 'next/app';
-import Head from 'next/head';
-import { FC } from 'react';
-import { theme } from 'components/common/Theme';
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+import type { AppProps } from "next/app";
+import Head from "next/head";
+import { FC } from "react";
+import { theme } from "components/common/Theme";
 
-const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => (
-  <ThemeProvider theme={theme}>
+const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+  return (
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <Head>
         <title>リナビスマネージャー</title>
@@ -15,6 +16,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => (
         <meta name="google" content="notranslate" />
       </Head>
       <Component {...pageProps} />
-  </ThemeProvider>
-);
+    </ThemeProvider>
+  );
+};
 export default MyApp;

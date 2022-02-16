@@ -30,7 +30,12 @@ const Header: FC<HeaderProps> = ({ title }) => {
   const [userName, setUserName] = useState("");
 
   return (
-    <AppBar position="absolute">
+    <AppBar
+      position="absolute"
+      sx={{
+        height: "65px",
+      }}
+    >
       <Toolbar
         sx={{
           pr: "24px",
