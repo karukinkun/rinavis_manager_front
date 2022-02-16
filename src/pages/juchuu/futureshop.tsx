@@ -6,14 +6,14 @@ import {
   Divider,
   Grid,
   InputAdornment,
+  styled,
   TextField,
   Typography,
 } from "@mui/material";
 
-import { FC, useMemo } from "react";
+import { FC } from "react";
 
 import Layout from "components/common/Layout";
-import moment from "moment";
 
 import {
   DataGrid,
@@ -102,24 +102,23 @@ const Futureshop: FC = () => {
 
   return (
     <Layout title="受注データ取込（Future Shop）">
-      <Grid item container rowSpacing={3}>
-        <Grid item xs="auto">
-          <TextField
-            variant="outlined"
-            fullWidth
-            autoComplete="off"
-            type="file"
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <Button variant="contained" size="small">
-                    アップロード
-                  </Button>
-                </InputAdornment>
-              ),
-            }}
-          />
+      <Grid container rowSpacing={3}>
+        <Grid item container columnSpacing={2}>
+          <Grid item xs="auto">
+            <TextField
+              variant="outlined"
+              fullWidth
+              autoComplete="off"
+              type="file"
+            />
+          </Grid>
+          <Grid item xs="auto">
+            <Button type="submit" variant="contained">
+              取込開始
+            </Button>
+          </Grid>
         </Grid>
+
         <Grid item xs={12} container rowSpacing={3}>
           <Grid item xs>
             <Typography component="h3">取込結果</Typography>
@@ -156,7 +155,7 @@ const Futureshop: FC = () => {
                 <CardContent>
                   <Box mb={4}>
                     <Typography variant="body2" component="h4">
-                      正常件数
+                      取込件数
                     </Typography>
                   </Box>
                   <Typography
@@ -180,7 +179,7 @@ const Futureshop: FC = () => {
                 <CardContent>
                   <Box mb={4}>
                     <Typography variant="body2" component="h4">
-                      異常件数
+                      除外件数
                     </Typography>
                   </Box>
                   <Typography
@@ -246,7 +245,7 @@ const Futureshop: FC = () => {
           </Grid>
 
           <Grid item xs>
-            <Typography component="h3">異常データ</Typography>
+            <Typography component="h3">除外受注一覧</Typography>
             <Box my={1}>
               <Divider />
             </Box>

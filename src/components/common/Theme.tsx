@@ -66,12 +66,6 @@ export const theme = createTheme({
         footerContainer: {
           backgroundColor: "inherit",
         },
-        editInputCell: {
-          backgroundColor: "#CCC",
-        },
-        cellEditable: {
-          backgroundColor: "#CCC",
-        },
       },
     },
   },
