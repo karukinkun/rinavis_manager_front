@@ -3,6 +3,7 @@
  */
 import { createTheme } from "@mui/material";
 import type {} from "@mui/x-data-grid/themeAugmentation";
+
 declare module "@mui/material/styles" {
   interface Palette {
     baseSecondary: Palette["primary"];
@@ -26,8 +27,23 @@ export const theme = createTheme({
     text: {
       primary: "#34395e",
     },
+    error: {
+      main: "#d32f2f",
+      light: "#f4d0cf",
+    },
   },
   components: {
+    MuiButton: {
+      defaultProps: {
+        size: "medium",
+        variant: "contained",
+      },
+      styleOverrides: {
+        outlinedPrimary: {
+          backgroundColor: "#FFF",
+        },
+      },
+    },
     MuiTextField: {
       defaultProps: {
         size: "small",
@@ -35,18 +51,16 @@ export const theme = createTheme({
         fullWidth: true,
       },
     },
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          height: "100%",
-        },
+    MuiGrid: {
+      defaultProps: {
+        columnSpacing: 2,
+        rowSpacing: 2,
       },
     },
     MuiDataGrid: {
       defaultProps: {
         autoHeight: true,
         disableColumnMenu: true,
-        hideSortIcons: true,
       },
       styleOverrides: {
         root: {

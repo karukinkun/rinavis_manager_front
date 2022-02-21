@@ -8,22 +8,9 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/router";
 import { FC } from "react";
-import { useForm } from "react-hook-form";
-
-type LoginForm = {
-  userId: string;
-  password: string;
-};
 
 const Login: FC = () => {
   const router = useRouter();
-  const { register, handleSubmit } = useForm<LoginForm>({
-    mode: "onSubmit",
-    defaultValues: {
-      userId: "",
-      password: "",
-    },
-  });
 
   return (
     <Container component="main" maxWidth="xs">
