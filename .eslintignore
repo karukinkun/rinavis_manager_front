@@ -1,0 +1,9 @@
+.next/
+out/
+public/
+**/coverage/
+**/node_modules/
+**/*.min.js
+*.config.js
+.*lintrc.js
+/next-env.d.ts

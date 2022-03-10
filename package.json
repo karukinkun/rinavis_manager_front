@@ -1,0 +1,39 @@
+{
+  "name": "rinavis_manager_front",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.4.1",
+    "@mui/material": "^5.4.2",
+    "@mui/x-data-grid": "^5.5.1",
+    "@types/moment": "^2.13.0",
+    "moment": "^2.29.1",
+    "next": "12.0.10",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.27.0"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.16",
+    "@types/react": "17.0.39",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "eslint": "8.8.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "12.0.10",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "prettier": "^2.5.1",
+    "stylelint": "^14.5.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard": "^25.0.0",
+    "typescript": "4.5.5"
+  }
+}
