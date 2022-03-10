@@ -11,8 +11,6 @@ import { styled } from "@mui/material/styles";
 import router from "next/router";
 import { FC } from "react";
 
-const drawerWidth = 240;
-
 const SideMenuList = styled(List)<ListProps>(({ theme }) => ({
   backgroundColor: theme.palette.baseSecondary.main,
   color: theme.palette.baseSecondary.contrastText,
@@ -25,14 +23,14 @@ const SideMenuListItemIcon = styled(ListItemIcon)<ListItemIconProps>(
 );
 
 const SideMenu: FC = () => (
-  <Box width={drawerWidth} bgcolor="baseSecondary.main">
+  <Box width={240} bgcolor="baseSecondary.main">
     <Toolbar
       sx={{
         display: "flex",
         alignItems: "center",
         justifyContent: "flex-end",
         px: [1],
-        width: drawerWidth,
+        width: 240,
         borderBottom: 1,
         borderColor: "divider",
       }}

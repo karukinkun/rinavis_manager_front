@@ -1,6 +1,3 @@
-/*
- * Mui（Material-Ui ver5）テーマカスタマイズ定義
- */
 import { createTheme } from "@mui/material";
 import type {} from "@mui/x-data-grid/themeAugmentation";
 
