@@ -14,10 +14,9 @@ import {
   GridCellParams,
   GridColDef,
   GridValueFormatterParams,
-  GridValueGetterParams,
 } from "@mui/x-data-grid";
 import moment from "moment";
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC, useMemo, useState } from "react";
 
 import { PageResponse } from "api/page/page.dto";
 import ConfirmDialog from "components/common/ConfirmDialog";
@@ -26,123 +25,86 @@ import { theme } from "components/common/Theme";
 
 const Futureshop: FC = () => {
   const [isOpenDialog, setIsOpenDialog] = useState(false);
-  const [createdHistory, setCreatedHistoryList] = useState<PageResponse<any>>({
-    totalRowCount: 0,
-    dataList: [],
-  });
   const [juchuuList, setJuchuuList] = useState<PageResponse<any>>({
     totalRowCount: 0,
     dataList: [],
   });
 
-  // const columns: GridColDef[] = ;
-
-  const createdHistoryColumns: GridColDef[] = [
-    {
-      field: "id",
-      headerName: "id",
-      flex: 1,
-      hide: true,
-    },
-    {
-      field: "createdHistoryAtLast",
-      headerName: "最終取込日時",
-      width: 180,
-      valueGetter: ({ value }: GridValueGetterParams<Date>) =>
-        moment(value).format("YYYY/MM/DD/ HH:mm"),
-    },
-    {
-      field: "operator",
-      headerName: "担当者",
-      width: 200,
-    },
-    {
-      field: "uploadCount",
-      headerName: "取込件数",
-      width: 90,
-      align: "right",
-    },
-    {
-      field: "excludeCount",
-      headerName: "除外件数",
-      width: 90,
-      align: "right",
-    },
-    {
-      field: "targetPeriod",
-      headerName: "取込対象期間",
-      flex: 1,
-      valueGetter: ({ value }: GridValueGetterParams<Date>) =>
-        moment(value).format("YYYY/MM/DD/ HH:mm"),
-    },
-  ];
-
-  // const baseProps = {
-  //   width: 80,
-  //   editable: true,
-  //   hideSortIcons: true,
-  //   sortable: false,
-  // };
-
-  const baseProps = {
-    width: 150,
-    editable: true,
-    hideSortIcons: true,
-    sortable: false,
-  };
-
   const juchuuListColumns: GridColDef[] = useMemo(
     () => [
       {
-        ...baseProps,
+        width: 60,
+        editable: true,
+        hideSortIcons: true,
+        sortable: false,
         field: "status",
         headerName: "除外",
         type: "boolean",
-        width: 60,
         valueFormatter: (data: GridValueFormatterParams) =>
           data.value ? "する" : "しない",
       },
       {
-        ...baseProps,
+        width: 250,
+        editable: true,
+        hideSortIcons: true,
+        sortable: false,
         field: "errorMsg",
         headerName: "エラー内容",
-        width: 250,
       },
       {
-        ...baseProps,
+        width: 150,
+        editable: true,
+        hideSortIcons: true,
+        sortable: false,
         field: "ecOrderNo",
         headerName: "EC受注番号",
       },
       {
-        ...baseProps,
+        width: 150,
+        editable: true,
+        hideSortIcons: true,
+        sortable: false,
         field: "ecCustomerNo",
         headerName: "EC顧客番号",
       },
       {
-        ...baseProps,
+        width: 150,
+        editable: true,
+        hideSortIcons: true,
+        sortable: false,
         field: "customerName",
         headerName: "注文者氏名",
       },
       {
-        ...baseProps,
+        width: 100,
+        editable: true,
+        hideSortIcons: true,
+        sortable: false,
         field: "quantity",
         headerName: "購入数量",
-        width: 100,
         align: "right",
       },
       {
-        ...baseProps,
+        width: 250,
+        editable: true,
+        hideSortIcons: true,
+        sortable: false,
         field: "options",
         headerName: "オプション内容",
-        width: 250,
       },
       {
-        ...baseProps,
+        width: 150,
+        editable: true,
+        hideSortIcons: true,
+        sortable: false,
         field: "paymentType",
         headerName: "支払方法種別",
       },
       {
-        ...baseProps,
+        width: 150,
+        editable: true,
+        hideSortIcons: true,
+        sortable: false,
         field: "total",
         headerName: "料金総額（税込）",
         valueFormatter: (data: GridValueFormatterParams) =>
@@ -150,7 +112,10 @@ const Futureshop: FC = () => {
         align: "right",
       },
       {
-        ...baseProps,
+        width: 150,
+        editable: true,
+        hideSortIcons: true,
+        sortable: false,
         field: "tax",
         headerName: "消費税額",
         valueFormatter: (data: GridValueFormatterParams) =>
@@ -158,27 +123,39 @@ const Futureshop: FC = () => {
         align: "right",
       },
       {
-        ...baseProps,
+        width: 150,
+        editable: true,
+        hideSortIcons: true,
+        sortable: false,
         field: "deliveryName",
         headerName: "お届け先氏名",
       },
       {
-        ...baseProps,
+        width: 150,
+        editable: true,
+        hideSortIcons: true,
+        sortable: false,
         field: "ShipPrefecture",
         headerName: "お届け先（都道府県）",
       },
       {
-        ...baseProps,
+        width: 150,
+        editable: true,
+        hideSortIcons: true,
+        sortable: false,
         field: "ShipCity",
         headerName: "お届け先（市区町村）",
       },
       {
-        ...baseProps,
+        width: 150,
+        editable: true,
+        hideSortIcons: true,
+        sortable: false,
         field: "ShipAddress",
         headerName: "お届け先（番地/建物）",
       },
     ],
-    [baseProps]
+    []
   );
 
   const rows = useMemo(
@@ -258,29 +235,6 @@ const Futureshop: FC = () => {
     ],
     []
   );
-
-  useEffect(() => {
-    void (() => {
-      try {
-        const createdHistoryResult = [
-          {
-            id: 1,
-            createdHistoryAtLast: new Date(),
-            operator: "ふり蔵 太郎",
-            uploadCount: 1,
-            excludeCount: 2,
-            targetPeriod: new Date(),
-          },
-        ];
-        setCreatedHistoryList({
-          totalRowCount: createdHistoryResult.length,
-          dataList: createdHistoryResult,
-        });
-      } catch (e: unknown) {
-        console.log(e);
-      }
-    })();
-  }, []);
 
   return (
     <Layout title="受注データ取込（Future Shop）">
@@ -558,6 +512,7 @@ const Futureshop: FC = () => {
                 pageSize={4}
                 rowHeight={35}
                 getCellClassName={(params: GridCellParams<string>) =>
+                  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
                   params.row.errorField === params.field ? "errorField" : ""
                 }
               />

@@ -49,6 +49,15 @@ export const theme = createTheme({
         size: "small",
         variant: "outlined",
         fullWidth: true,
+        InputProps: {
+          startAdornment: <></>,
+          endAdornment: <></>,
+        },
+      },
+      styleOverrides: {
+        root: {
+          backgroundColor: "#FFF",
+        },
       },
     },
     MuiGrid: {

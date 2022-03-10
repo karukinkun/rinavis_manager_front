@@ -1,6 +1,6 @@
 import { Button, Grid } from "@mui/material";
-import { FC } from "react";
 import { useRouter } from "next/router";
+import { FC } from "react";
 
 import Layout from "components/common/Layout";
 
@@ -9,20 +9,28 @@ const Juchuu: FC = () => {
 
   return (
     <Layout title="受注処理">
-      <Grid container columnSpacing={2}>
-        <Grid item xs={2}>
-          <Button
-            variant="contained"
-            fullWidth
-            onClick={() => router.push("juchuu/futureshop")}
-          >
-            受注データ取込（Future Shop）
-          </Button>
+      <Grid container>
+        <Grid item container>
+          <Grid item xs={2}>
+            <Button fullWidth onClick={() => router.push("juchuu/futureshop")}>
+              受注データ取込（Future Shop）
+            </Button>
+          </Grid>
+          <Grid item xs={2}>
+            <Button fullWidth onClick={() => router.push("juchuu/yahoo")}>
+              受注データ取込（Yahoo）
+            </Button>
+          </Grid>
         </Grid>
-        <Grid item xs={2}>
-          <Button variant="contained" fullWidth>
-            受注データ取込（Yahoo）
-          </Button>
+        <Grid item container>
+          <Grid item xs={2}>
+            <Button
+              fullWidth
+              onClick={() => router.push("juchuu/juchuusanshou")}
+            >
+              受注照会
+            </Button>
+          </Grid>
         </Grid>
       </Grid>
     </Layout>
