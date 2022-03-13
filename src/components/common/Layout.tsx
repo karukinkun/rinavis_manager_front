@@ -22,7 +22,7 @@ const Layout: FC<LayoutProps> = ({ children, title }) => (
         width="100%"
         bgcolor={theme.palette.grey[300]}
         sx={{
-          height: "100vh",
+          minHeight: "100vh",
         }}
       >
         <Box px="24px">{children}</Box>

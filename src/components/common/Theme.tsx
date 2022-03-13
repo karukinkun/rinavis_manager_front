@@ -32,7 +32,6 @@ export const theme = createTheme({
   components: {
     MuiButton: {
       defaultProps: {
-        size: "medium",
         variant: "contained",
       },
       styleOverrides: {
@@ -46,6 +45,7 @@ export const theme = createTheme({
         size: "small",
         variant: "outlined",
         fullWidth: true,
+        autoComplete: "off",
         InputProps: {
           startAdornment: <></>,
           endAdornment: <></>,

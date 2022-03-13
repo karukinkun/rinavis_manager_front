@@ -41,7 +41,7 @@ const SideMenu: FC = () => (
       container
       direction="column"
       justifyContent="space-between"
-      height="calc(100% - 64px)"
+      minHeight="calc(100% - 64px)"
     >
       <Grid item xs="auto">
         <SideMenuList>
