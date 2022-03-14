@@ -1,8 +1,7 @@
 import Box from "@mui/material/Box";
 import { ReactNode, FC } from "react";
 
-import Header from "./Header";
-import SideMenu from "./SideMenu";
+import Navigation from "./Navigation";
 import { theme } from "./Theme";
 
 type LayoutProps = {
@@ -13,8 +12,7 @@ type LayoutProps = {
 const Layout: FC<LayoutProps> = ({ children, title }) => (
   <>
     <Box sx={{ display: "flex" }}>
-      <Header title={title} />
-      <SideMenu />
+      <Navigation title={title} />
       <Box
         component="main"
         pt="90px"

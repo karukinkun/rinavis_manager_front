@@ -530,7 +530,7 @@ const Juchuusanshou: FC = () => {
             <Box p={3}>
               <Grid container>
                 <Grid item container xs={12}>
-                  <Grid item xs={4}>
+                  <Grid item xs={5}>
                     <Typography component="p">支払方法</Typography>
                   </Grid>
                   <Grid item xs={4}>
