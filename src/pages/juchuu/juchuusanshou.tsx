@@ -174,6 +174,39 @@ const Juchuusanshou: FC = () => {
       <Grid container>
         <Grid item xs={12}>
           <Box mb={2}>
+            <Typography component="h3">
+              検索項目
+            </Typography>
+          </Box>
+          <Paper>
+            <Box p={3}>
+              <Grid container>
+                <Grid item container xs>
+                  <Grid item container>
+                    <Grid item xs={3}>
+                      <TextField label="管理番号" />
+                    </Grid>
+                    <Grid item xs={3}>
+                      <TextField label="EC受注番号" />
+                    </Grid>
+                    <Grid item xs={3}>
+                      <TextField label="EC顧客番号" />
+                    </Grid>
+                    <Grid item xs={3}>
+                      <TextField label="氏名" />
+                    </Grid>
+                    <Grid item xs={3}>
+                      <TextField label="電話番号" />
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Box>
+          </Paper>
+        </Grid>
+
+        <Grid item xs={12}>
+          <Box mb={2}>
             <Typography component="h3">基本情報</Typography>
           </Box>
           <Paper>
@@ -187,12 +220,6 @@ const Juchuusanshou: FC = () => {
 
                 <Grid item container xs>
                   <Grid item container>
-                    <Grid item xs={3}>
-                      <TextField label="管理番号" />
-                    </Grid>
-                    <Grid item xs={3}>
-                      <TextField label="EC受注番号" />
-                    </Grid>
                     <Grid item xs={3}>
                       <TextField
                         label="ステータス"

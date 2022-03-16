@@ -57,6 +57,14 @@ export const theme = createTheme({
         },
       },
     },
+    MuiInputBase: {
+      styleOverrides: {
+        input: {
+          paddingTop: "6px !important",
+          paddingBottom: "4px !important",
+        },
+      },
+    },
     MuiGrid: {
       defaultProps: {
         columnSpacing: 2,
